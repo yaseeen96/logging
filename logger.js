@@ -38,6 +38,12 @@ const logger = createLogger({
     new winston.transports.Console({
       format: alignColorsAndTime,
     }),
+    new winston.transports.Http({
+      level: "debug",
+      host: "localhost",
+      port: 3002,
+      path: "/webhook",
+    }),
   ],
 });
 
